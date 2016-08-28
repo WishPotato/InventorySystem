@@ -7,10 +7,11 @@ public class ItemDatabase : MonoBehaviour {
 
     public List<Item> dataBase = new List<Item>();
 
-	void Start () {
-        dataBase.Add(new Item());
-        dataBase.Add(new Item(1, "Key", "Key to The Great Door."));
-        dataBase.Add(new Item(2, "Old Apple", "This apple should not be eaten."));
+	void Awake () {
+        dataBase.Add(new Item(0, "empty", "N/A", 0));
+        dataBase.Add(new Item(1, "Key", "Key to The Great Door.", 0));
+        dataBase.Add(new Item(2, "Apple", "This apple should not be eaten.", 0));
+        dataBase.Add(new Item(3, "Dust", "The Dust of a person who walked upon it.", 0));
 	}
 	
 }
@@ -20,19 +21,14 @@ public class Item
     private string name;
     private string description;
     private int Id;
+    private byte stack;
 
-    public Item(int id, string n, string d)
+    public Item(int id, string n, string d, byte s)
     {
         Id = id;
         name = n;
         description = d;
-    }
-
-    public Item()
-    {
-        Id = 0;
-        name = "Empty";
-        description = "N/A";
+        stack = s;
     }
 
     public string Name
@@ -50,5 +46,12 @@ public class Item
     public int ID
     {
         get { return Id; }
+        set { Id = value; }
+    }
+
+    public byte Stack
+    {
+        get { return stack; }
+        set { stack = value; }
     }
 }
