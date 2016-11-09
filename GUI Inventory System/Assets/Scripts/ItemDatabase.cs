@@ -7,7 +7,10 @@ public class ItemDatabase : MonoBehaviour {
 
     public List<Item> dataBase = new List<Item>();
 
-	void Awake () {
+    // --- <Summary Begin> ---
+    // Sets the ItemDatabase list on awake.
+    // --- <Summary End> ---
+    void Awake () {
         dataBase.Add(new Item(0, "empty", "N/A", 0));
         dataBase.Add(new Item(1, "Key", "Key to The Great Door.", 0));
         dataBase.Add(new Item(2, "Apple", "This apple should not be eaten.", 0));
@@ -16,6 +19,9 @@ public class ItemDatabase : MonoBehaviour {
 	
 }
 
+// --- <Summary Begin> ---
+// Class for every object in the database array.
+// --- <Summary End> ---
 public class Item
 {
     private string name;

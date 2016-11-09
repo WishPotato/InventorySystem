@@ -77,6 +77,9 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    // --- <Summary Begin> ---
+    // Adds Item from Item-Database Arraylist
+    // --- <Summary End> ---
     void AddItem(int id)
     {
         if (itemDatabase.dataBase.Count < id || id == 0)
@@ -97,6 +100,10 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    // --- <Summary Begin> ---
+    // Removes a Item from the inventory array.
+    // If the object amount is greater than 1, remove one object from the inventory array.
+    // --- <Summary End> ---
     private void RemoveItemFromSlot(int slot)
     {
         if (inventory[slot].ID == 0)
@@ -107,12 +114,19 @@ public class Inventory : MonoBehaviour {
             inventory[slot] = itemDatabase.dataBase[0];
     }
 
+    // --- <Summary Begin> ---
+    // Calls function to remove an item from the inventory array. 
+    // If the object amount is greater than 1, remove one object from the inventory array.
+    // --- <Summary End> ---
     void RemoveItem(int id)
     {
         if (ItemIsInSlot(id))
             RemoveItemFromSlot(ItemSlot);
     }
 
+    // --- <Summary Begin> ---
+    // Find a item from the item-database array in the inventory array
+    // --- <Summary End> ---
     private bool ItemIsInSlot(int id)
     {
         bool isInSlot = false;
